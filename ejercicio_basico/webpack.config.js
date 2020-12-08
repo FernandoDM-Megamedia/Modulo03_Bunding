@@ -33,11 +33,9 @@ module.exports = {
                         loader: "css-loader",
                         options: {
                             modules: {
-                                // localsConvention: "camelCase", <--- aqui no funciona, la siguiente linea si 
                                 exportLocalsConvention: "camelCase",
                                 localIdentName: "[name]__[local]_[hash:base64:5]",
                             },
-                            // localsConvention: 'camelCase', <--- error 
                         },
                     },
                     {

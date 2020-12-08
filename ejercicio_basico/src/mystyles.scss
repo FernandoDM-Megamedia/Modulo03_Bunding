@@ -1,8 +1,14 @@
-$blue-color: teal;
-.red-bck {
-    background-color: $blue-color;
-}
-img {
-    display: block;
-    width: 200px;
+
+.content {
+    width: 30vw;
+    margin: 0 auto;
+    .title {
+        margin: 0;
+        text-align: center;
+        padding: 0 0 2rem 0;
+    }
+    .img_logo {
+        display: flex;
+        width: 100%;
+    }
 }
