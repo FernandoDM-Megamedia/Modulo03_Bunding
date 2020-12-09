@@ -13,6 +13,8 @@ Implementar una aplicación simple que:
 * Montado con typescript
 * Texto "hola mundo" en sass
 
-- npm i
-- npm run-script build
-- npm start
+## Pasos
+
+- `npm i`
+- `npm run-script build`
+- `npm start`
