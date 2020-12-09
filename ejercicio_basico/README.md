@@ -12,3 +12,7 @@ Implementar una aplicación simple que:
 * Muestre un logo
 * Montado con typescript
 * Texto "hola mundo" en sass
+
+.- npm i
+.- npm run-script build
+.- npm start
