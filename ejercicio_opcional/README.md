@@ -11,4 +11,8 @@ Opcional
 * Tenga variables de entorno para desarrollo en producción
 * Que se tenga forma fr medir cuanto ocupa cada libreria y nuestro codigo en el bundle
 
-* lo mismo con parcel
+## Pasos
+
+- `npm i`
+- `npm run-script build`
+- `npm start`
