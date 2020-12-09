@@ -9,14 +9,13 @@ module.exports = {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
     },
     entry: {
-        app: "./index.tsx",
-        appStyles: [
-            "./mystyles.scss"
-        ],
+        app: ["./index.tsx"],
+        appStyles: ["./mystyles.scss"],
     },
     output: {
         filename: "[name].[chunkhash].js",
         path: path.resolve(process.cwd(), "dist"),
+        publicPath: "/",
     },
     module: {
         rules: [
@@ -26,7 +25,7 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.scss$/,
+                test: /\.scss?$/,
                 exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -36,6 +35,8 @@ module.exports = {
                             modules: {
                                 exportLocalsConvention: "camelCase",
                                 localIdentName: "[name]__[local]_[hash:base64:5]",
+                                localIdentContext: path.resolve(__dirname, "src"),
+                                localIdentHashPrefix: "my-custom-hash",
                             },
                         },
                     },
@@ -57,10 +58,7 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
-                loader: "url-loader",
-                options: {
-                    limit: 5000,
-                },
+                type: "asset/resource",
             },
             {
                 test: /\.html$/,
@@ -75,11 +73,12 @@ module.exports = {
             // hash: true,
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[chunkhash].css",
+            filename: "[name].css",
+            // filename: "[name].[chunkhash].css",
             chunkFilename: "[id].css",
         }),
     ],
-    devServer: {
-        port: 8081,
-    },
+    // devServer: {
+    //     port: 8081,
+    // },
 };
