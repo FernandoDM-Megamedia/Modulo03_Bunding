@@ -14,6 +14,8 @@ Opcional
 ## Pasos
 
 - `npm i`
-- `npm start`
-- `npm run build:dev`
-- `npm run build:prod`
+- Local .- `npm start`
+- Producción .- `npm run start:prod`
+- build Desarrollo .- `npm run build:dev`
+- build Produccion .- `npm run build:prod`
+- BundleAnalyzerPlugin .- `npm run build:perf`
