@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 const basePath = __dirname;
@@ -73,6 +74,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html', // output a dist
             template: 'index.html', // input de donde lee
@@ -84,6 +86,6 @@ module.exports = {
         }),
     ],
     devServer: {
-        port: 8082,
+        port: 8080,
     },
 };
