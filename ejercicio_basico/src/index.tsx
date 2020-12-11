@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 const LogoImg = require("./content/logo_1.png");  
-// const classes = require("./mystyles.scss");  // aqui no funciona ???
-import classes from "./mystyles.scss";  // duda por que da error y lo esta usando ???
+import classes from "./mystyles.scss";  // para que typescript entienda el SCSS hay que crear un fichero .- declaration.d.ts
 
 ReactDOM.render(
   <div className={ classes.content }>
