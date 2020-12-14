@@ -1,15 +1,39 @@
 {
   "name": "ejercicio_opcional_parcel",
   "version": "1.0.0",
-  "description": "# Modulo03_Bunding",
+  "description": "#Modulo03_Bunding",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist && parcel ./src/index.html --no-cache",
+    "build:prod": "rimraf dist && parcel build ./src/index.html",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "start:dev": "rimraf dist && parcel ./src/index.html --open --no-cache",
+    "start": "run-p -l type-check:watch start:dev",
+    "preview": "NODE_ENV=production node ./src/index.js --visualise"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/node": "^14.14.6",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
+    "postcss-modules": "^3.2.2",
+    "rimraf": "^3.0.2",
+    "sass": "^1.29.0",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "autoprefixer": "^10.1.0",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
